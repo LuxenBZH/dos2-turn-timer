@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" />
+    <version major="3" minor="6" revision="6" build="0" />
+    <region id="MetaData">
+        <node id="root">
+            <attribute id="Module" value="d8d57637-8e83-48e4-b7b0-0941e22a4745" type="23" />
+            <attribute id="Name" value="lx_turn_timer" type="23" />
+            <attribute id="Type" value="Add-on" type="23" />
+            <attribute id="UUID" value="2c70c5b2-9c4c-4367-a5f4-c1842f184963" type="23" />
+        </node>
+    </region>
+</save>

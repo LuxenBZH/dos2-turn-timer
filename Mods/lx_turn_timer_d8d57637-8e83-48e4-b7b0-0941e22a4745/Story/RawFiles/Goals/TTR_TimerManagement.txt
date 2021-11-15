@@ -1,0 +1,55 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+IF
+ObjectTurnStarted(_Object)
+AND
+ObjectIsCharacter(_Object, 1)
+// AND
+// CharacterIsPlayer((CHARACTERGUID)_Object, 1)
+THEN
+LX_SetTurnTimer((CHARACTERGUID)_Object, 1);
+DB_TTR_CurrentTurn((CHARACTERGUID)_Object);
+TimerLaunch("LX_TurnCountdown", 1000);
+
+IF
+TimerFinished("LX_TurnCountdown")
+AND
+DB_TTR_CurrentTurn(_Object)
+// AND
+// GetVarInteger(_Object, "LX_TimeRemaining", _Time)
+// AND
+// IntegerSubtract(_Time, 1, _NewTime)
+// AND
+// _NewTime > 0
+THEN
+// SetVarInteger(_Object, "LX_TimeRemaining", _NewTime);
+LX_SetTurnTimer((CHARACTERGUID)_Object, 0);
+
+
+// IF
+// TimerFinished("LX_TurnCountdown")
+// AND
+// DB_TTR_CurrentTurn(_Object)
+// AND
+// GetVarInteger(_Object, "LX_TimeRemaining", _Time)
+// AND
+// IntegerSubtract(_Time, 1, _NewTime)
+// AND
+// _NewTime == 0
+// THEN
+// EndTurn(_Object);
+
+IF
+ObjectTurnEnded(_Object)
+AND
+DB_TTR_CurrentTurn((CHARACTERGUID)_Object)
+THEN
+NOT DB_TTR_CurrentTurn(_Object);
+
+
+EXITSECTION
+
+ENDEXITSECTION

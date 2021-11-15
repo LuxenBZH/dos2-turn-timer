@@ -1,0 +1,8 @@
+{
+    "RequiredExtensionVersion": 46,
+	"ModTable" : "TimerMod",
+    "FeatureFlags": [
+        "OsirisExtensions",
+        "Lua"
+    ]
+}
